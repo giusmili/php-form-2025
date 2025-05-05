@@ -28,25 +28,18 @@
         </h2>
         <ul>
         <?php
-                $hasEmpty = false;
-
-                # Vérifie s'il y a un champ vide
-                foreach ($_POST as $value) {
-                    if (empty($value)) {
-                        $hasEmpty = true;
-                        break;
-                    }
-                }
-                ?>
+           
+            include_once __DIR__ .'/controller/controllerForm.php';
+        ?>
 
                 <?php if ($hasEmpty): ?>
-                    <p style="color: red;">Erreur : au moins un champ est vide.</p>
+                    <p class="warning">Erreur : au moins un champ est vide.</p>
                 <?php else: ?>
-                    <ul>
-                        <?php foreach ($_POST as $value): ?>
-                            <li><?= htmlspecialchars($value) ?></li>
+                 
+                        <?php foreach ($_POST as $key => $value): ?>
+                            <li><?= $key." ".htmlspecialchars($value) ?></li>
                         <?php endforeach; ?>
-                    </ul>
+                  
                 <?php endif; ?>
 
            
