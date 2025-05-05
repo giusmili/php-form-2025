@@ -26,7 +26,9 @@
             Vos informations
         </h2>
         <ul>
-                </ul>
+      
+         
+        </ul>
     </section>
         <fieldset>
             <legend>inscription</legend>
