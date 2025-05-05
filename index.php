@@ -26,9 +26,16 @@
             Vos informations
         </h2>
         <ul>
+            <?php foreach($_POST as $key => $value) : ?>
+                <?php if(!empty($value)) : ?>
+                    <li><?= $key." ".$value?></li>
+                <?php else : ?>
+                    <li><?= $key ?> champs obligatoire! </li>
+                <?php endif ?>
+                   
+            <?php endforeach ?>
             <?php
-
-                foreach($_POST as $key => $value){
+                /* foreach($_POST as $key => $value){
                    if(!empty($value)){
                        print "<li>$key : $value</li>";
                 }
@@ -36,7 +43,7 @@
                        print "<li>$key : valeur obligatoire </li>";
                    }
                 }
-
+            */
             ?> 
          
         </ul>
