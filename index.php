@@ -27,7 +27,30 @@
             Vos informations
         </h2>
         <ul>
-                </ul>
+        <?php
+                $hasEmpty = false;
+
+                # Vérifie s'il y a un champ vide
+                foreach ($_POST as $value) {
+                    if (empty($value)) {
+                        $hasEmpty = true;
+                        break;
+                    }
+                }
+                ?>
+
+                <?php if ($hasEmpty): ?>
+                    <p style="color: red;">Erreur : au moins un champ est vide.</p>
+                <?php else: ?>
+                    <ul>
+                        <?php foreach ($_POST as $value): ?>
+                            <li><?= htmlspecialchars($value) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+
+           
+        </ul>
     </section>
         <fieldset>
             <legend>inscription</legend>
@@ -59,7 +82,10 @@
         </form>
 </fieldset>
 <pre>
+    <?php
+        # print_r($_POST)
 
+    ?>
 </pre>
     
     
