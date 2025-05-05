@@ -26,7 +26,18 @@
             Vos informations
         </h2>
         <ul>
-      
+            <?php
+
+                foreach($_POST as $key => $value){
+                   if(!empty($value)){
+                       print "<li>$key : $value</li>";
+                }
+                else{
+                       print "<li>$key : valeur obligatoire </li>";
+                   }
+                }
+
+            ?> 
          
         </ul>
     </section>
@@ -44,6 +55,7 @@
                         autofocus>
                 <label for="date">Votre anniversaire</label>
                 <input type="date" id="date" name="date" aria-required="true">
+
                 <label for="pays">Lieu de naissance</label>
                     <div class="select-pays" role="group" aria-labelledby="pays">
                         <select name="pays" id="pays" aria-required="true">
@@ -60,7 +72,9 @@
         </form>
 </fieldset>
 <pre>
-
+    <?php
+        # print_r($_POST)
+    ?>
 </pre>
     
     
