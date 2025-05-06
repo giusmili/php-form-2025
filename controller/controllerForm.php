@@ -1,13 +1,27 @@
 <?php
-    $hasEmpty = false;
+class Form{
+    static function emptyPostField(): bool {
         foreach ($_POST as $value) {
-                if (empty($value)) {
-                       $hasEmpty = true;
-                       break;
-                }
+            if (empty($value)) {
+                return true;
             }
-    # Vérifie s'il y a un champ vide
-           
+        }
+        return false;
+    }
+}
+
+Form::emptyPostField();
+
+
+/* $hasEmpty = false;
+foreach ($_POST as $value) {
+        if (empty($value)) {
+               $hasEmpty = true;
+               break;
+        }
+    } */
+# Vérifie s'il y a un champ vide
+   
                 
             
         

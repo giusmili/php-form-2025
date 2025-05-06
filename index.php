@@ -32,7 +32,7 @@
             include_once __DIR__ .'/controller/controllerForm.php';
         ?>
 
-                <?php if ($hasEmpty): ?>
+                <?php if (Form::emptyPostField()): ?>
                     <p class="warning">Erreur : au moins un champ est vide.</p>
                 <?php else: ?>
                  
